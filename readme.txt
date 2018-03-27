@@ -5,3 +5,6 @@ While flask  recive messages from my intranet pc,it sends a mail to my another m
 so that , my phone receive this message
 
 All of these are for free.
+
+
+password uses *** instead

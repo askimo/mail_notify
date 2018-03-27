@@ -17,7 +17,7 @@ msg['Subject']=Header(subject,'utf-8')
 msg['From']=sender
 msg['To']=receiver
 
-print msg.as_string()
+print(msg.as_string())
 smtp=smtplib.SMTP(smtpserver)
 
 smtp.login(username,password)
