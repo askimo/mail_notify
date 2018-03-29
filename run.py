@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 from flask import url_for
 from flask import render_template
+import json
 import mail
 app = Flask(__name__)
 
@@ -20,8 +21,18 @@ def show_url(url):
 @app.route('/')
 def index():
     return render_template("index.html")
+#post setting to /notify
+@app.route('/setting',methods=['POST','GET'])
+def setting():
+    if request.method == 'GET':
+        return render_template("setting.html")
+    print(dict(request.form))
+    with open('config.json','w') as f:
+        f.write(json.dumps(request.form))
+    return "<h1>setting finished."
 
-#post title and content to /notify
+
+#get title and content to /notify
 @app.route('/notify')
 def notify():
     title=request.args["title"]

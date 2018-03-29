@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>系统设置</title>
+    </head>
+    <body>
+        <form action="/setting" method="post">
+        <table>
+            <tr>
+                <td>设置发送者邮箱SMTP地址：</td>
+                <td><input type="text" name="server"></td>
+            </tr>
+            <tr>
+                <td>设置发送者所用的邮箱账号：</td>
+                <td><input type="email" name="sender"></td>
+            </tr>
+            <tr>
+                <td>设置发送者邮箱使用的密码或口令：</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>设置接收者的邮箱地址清单（逗号“,”为区分）：</td>
+                <td><input type="text" name="receivers"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="提交"></td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>
