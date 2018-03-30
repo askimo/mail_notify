@@ -14,8 +14,8 @@ def sendmail(title="Test  Mail from Python",content="Hello Python SMTP Mail"):
     server=con_dict['server']
     sender=con_dict['sender']
     password=con_dict['password']
-    receivers=con_dict['receivers'].split(',')
-    
+    receivers=con_dict['receivers']
+    print(receivers)
     msg=MIMEText(content)
     msg['Subject']=Header(title,'utf-8')
     msg['From']=sender
