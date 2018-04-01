@@ -19,7 +19,7 @@ def sendmail(title="Test  Mail from Python",content="Hello Python SMTP Mail"):
     msg=MIMEText(content)
     msg['Subject']=Header(title,'utf-8')
     msg['From']=sender
-    msg['To']=receivers
+    msg['To']=','.join(receivers)
     smtp=smtplib.SMTP(server)
     smtp.login(sender,password)
     smtp.sendmail(sender,receivers,msg.as_string())
