@@ -25,11 +25,13 @@ def index():
 @app.route('/setting',methods=['POST','GET'])
 def setting():
     if request.method == 'GET':
-        return render_template("setting.html")
+        with open('config.json','r') as f:
+            con_dict=json.loads(f.read())
+        return render_template("setting.html",cfg=con_dict)
     print(dict(request.form))
     with open('config.json','w') as f:
         f.write(json.dumps(request.form))
-    return "<h1>setting finished."
+    return "<h1>setting finished.<a href='/'>前往首页</a>"
 
 
 #get title and content to /notify
@@ -41,8 +43,8 @@ def notify():
     try:
         mail.sendmail(title,content)
     except Exception as e:
-        return "<h1>Exception accured while sending mail:<br><h2><font color='red'>%s</font>"%e
-    return "<h1><font  color='green'>Success sending mail notify</font>."
+        return "<h1>Exception accured while sending mail:<br><h2><font color='red'>%s</font><a href='/'>前往首页</a>"%e
+    return "<h1><font  color='green'>Success sending mail notify</font>.<a href='/'>前往首页</a>"
 
 if __name__ == "__main__":
     app.run()

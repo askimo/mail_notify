@@ -7,19 +7,19 @@
         <table>
             <tr>
                 <td>设置发送者邮箱SMTP地址：</td>
-                <td><input type="text" name="server"></td>
+                <td><input type="text" name="server" value="{{cfg.server}}"></td>
             </tr>
             <tr>
                 <td>设置发送者所用的邮箱账号：</td>
-                <td><input type="email" name="sender"></td>
+                <td><input type="email" name="sender" value="{{cfg.sender}}"></td>
             </tr>
             <tr>
                 <td>设置发送者邮箱使用的密码或口令：</td>
-                <td><input type="password" name="password"></td>
+                <td><input type="password" name="password"  value="{{cfg.password}}"></td>
             </tr>
             <tr>
                 <td>设置接收者的邮箱地址清单（逗号“,”为区分）：</td>
-                <td><input type="text" name="receivers"></td>
+                <td><input type="text" name="receivers" value="{{cfg.receivers}}"></td>
             </tr>
             <tr>
                 <td><input type="submit" value="提交"></td>
